@@ -30,11 +30,11 @@ export const formatSidebarData = (
     }
     // 중복 제거
     if (
-      !result[mainCategory].subcategories.some(
+      !result[mainCategory]!.subcategories.some(
         (sub) => sub.subCategoryLink.props.href === subCategoryLink.props.href,
       )
     ) {
-      result[mainCategory].subcategories.push({
+      result[mainCategory]!.subcategories.push({
         subCategoryLink,
         createdAt,
       });
