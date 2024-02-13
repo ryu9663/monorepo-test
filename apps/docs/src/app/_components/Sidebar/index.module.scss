@@ -1,0 +1,48 @@
+@use "src/styles/libs" as *;
+
+.sidebar_wrapper {
+  width: fit-content;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  padding: 20px 30px;
+  height: 100%;
+  border-left: 1px gray solid;
+  transition: right 0.5s linear;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  @include priority-focus-layer;
+
+  .sidebar {
+    margin-top: 80px;
+  }
+  &_on {
+    right: 0px;
+  }
+
+  &_off {
+    right: -$SIDEBAR_OPENED;
+  }
+  .close_btn {
+    box-shadow: none;
+    padding: 10px 0;
+  }
+}
+
+.other_links {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar_btn {
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  box-shadow: none;
+  padding: 10px 0;
+  @include priority-focus-layer;
+}
